@@ -7,25 +7,23 @@ RUN groupadd -r appgroup && useradd -r -u 10001 -g appgroup appuser
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the application code to the container
-COPY . .
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Copy the requirements file to the container
-COPY requirements.txt ./
-
-# Install the Python dependencies
+# Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Change ownership of the application directory to the new user
 RUN chown -R appuser:appgroup /app
 
 # Switch to the non-root user
-USER appuser
+USER appuser  # Ensure this user exists with UID 10001
 
-# Set the timezone to IST (Indian Standard Time)
-ENV TZ=Asia/Kolkata
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
 
-ENV PORT 5000
-EXPOSE $PORT
+# Define environment variable
+ENV FLASK_APP=app.py
 
-CMD flask run --host=0.0.0.0 --port $PORT
+# Run app.py when the container launches
+CMD ["flask", "run", "--host=0.0.0.0"]
