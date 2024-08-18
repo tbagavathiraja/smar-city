@@ -5,7 +5,7 @@ RUN  apt-get update
 RUN pip install --upgrade pip
 
 # Create a non-root user and group
-RUN groupadd -r appgroup && useradd -r -g appgroup appuser
+RUN groupadd -r appgroup && useradd -r -u 10001 -g appgroup appuser
 
 # Set the timezone to IST (Indian Standard Time)
 ENV TZ=Asia/Kolkata
