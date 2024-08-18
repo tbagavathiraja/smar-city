@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Energy Conservation Dashboard</h1>
+<p>Total Energy Usage: {{ energy_data.usage }} kWh</p>
+<p>Renewable Energy: {{ energy_data.renewable }} kWh</p>
+<a href="{{ url_for('home') }}">Back to Home</a>
+{% endblock %}

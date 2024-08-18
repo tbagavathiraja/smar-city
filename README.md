@@ -1,2 +1,0 @@
-# smar-city
-smar-city

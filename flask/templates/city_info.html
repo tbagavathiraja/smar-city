@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>City Information</h1>
+<ul>
+    {% for info in city_info %}
+        <li><strong>{{ info.title }}</strong>: {{ info.description }}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('home') }}">Back to Home</a>
+{% endblock %}

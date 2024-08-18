@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Solar Car Dashboard</h1>
+<p>Total Routes: {{ solar_car_data.routes }}</p>
+<p>CO2 Saved: {{ solar_car_data.co2_saved }} kg</p>
+<a href="{{ url_for('home') }}">Back to Home</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Industrial Energy Monitoring</h1>
+<ul>
+    {% for industry in industries %}
+        <li>{{ industry.name }} - Energy Consumption: {{ industry.energy_consumption }} kWh - Emissions: {{ industry.emissions }} tons CO2</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('home') }}">Back to Home</a>
+{% endblock %}

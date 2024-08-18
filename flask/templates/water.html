@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Water Recycling Dashboard</h1>
+<p>Total Water Usage: {{ water_data.usage }} Liters</p>
+<p>Recycled Water: {{ water_data.recycled }} Liters</p>
+<a href="{{ url_for('home') }}">Back to Home</a>
+{% endblock %}

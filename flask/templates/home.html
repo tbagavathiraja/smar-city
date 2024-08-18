@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to the City App</h1>
+
+<h2>Bills</h2>
+<ul>
+    {% for bill in bills %}
+        <li>{{ bill.name }} - Due: {{ bill.due_date }} - Amount: ₹{{ bill.amount }}</li>
+    {% endfor %}
+</ul>
+
+<h2>City Information</h2>
+<ul>
+    {% for info in city_info %}
+        <li><strong>{{ info.title }}</strong>: {{ info.description }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Messages</h2>
+<ul>
+    {% for message in messages %}
+        <li><strong>{{ message.sender }}:</strong> {{ message.message }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Energy Conservation</h2>
+<p>Usage: {{ energy_data.usage }} kWh</p>
+<p>Renewable Energy: {{ energy_data.renewable }} kWh</p>
+
+<h2>Water Recycling</h2>
+<p>Usage: {{ water_data.usage }} Liters</p>
+<p>Recycled Water: {{ water_data.recycled }} Liters</p>
+
+<h2>Industries</h2>
+<ul>
+    {% for industry in industries %}
+        <li>{{ industry.name }} - Energy Consumption: {{ industry.energy_consumption }} kWh - Emissions: {{ industry.emissions }} tons CO2</li>
+    {% endfor %}
+</ul>
+
+<h2>Solar Cars</h2>
+<p>Routes: {{ solar_car_data.routes }}</p>
+<p>CO2 Saved: {{ solar_car_data.co2_saved }} kg</p>
+
+{% endblock %}

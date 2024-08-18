@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Add a New Bill</h1>
+<form method="POST">
+    Bill Name: <input type="text" name="bill_name"><br>
+    Due Date: <input type="date" name="due_date"><br>
+    Amount: <input type="number" name="amount"><br>
+    <input type="submit" value="Add Bill">
+</form>
+<a href="{{ url_for('home') }}">Back to Home</a>
+{% endblock %}

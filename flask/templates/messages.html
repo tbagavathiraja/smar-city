@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Send a Message</h1>
+<form method="POST">
+    Your Name: <input type="text" name="sender"><br>
+    Message: <textarea name="message"></textarea><br>
+    <input type="submit" value="Send Message">
+</form>
+<a href="{{ url_for('home') }}">Back to Home</a>
+{% endblock %}

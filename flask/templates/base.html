@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('manage_bills') }}">Bills</a>
+        <a href="{{ url_for('view_city_info') }}">City Information</a>
+        <a href="{{ url_for('send_message') }}">Messages</a>
+        <a href="{{ url_for('energy_dashboard') }}">Energy</a>
+        <a href="{{ url_for('water_dashboard') }}">Water</a>
+        <a href="{{ url_for('industry_dashboard') }}">Industry</a>
+        <a href="{{ url_for('solar_dashboard') }}">Solar Cars</a>
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
