@@ -32,7 +32,7 @@ endpoints:
     networkVisibility: Public
     # +optional Context (base path) of the API that is exposed via this endpoint.
     # This is mandatory if the endpoint type is set to REST or GraphQL.
-    schemaFilePath: openapi.yaml
+    #schemaFilePath: openapi.yaml
 
     # represents context relevant to the service
-    context: /rs
+    #context: /rs
