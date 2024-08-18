@@ -4,10 +4,7 @@ docker build -t smart-city:0.0.1 -f Dockerfile .
 
 docker run --restart unless-stopped -d -p 5500:5000 smart-city:0.0.1
 
-
-
 ngrok config add-authtoken 1gZg9Ff1wx2DvbOIUbfjYhZQZjk_68ACf51v4d4mmxAf6TrXi
-
 
 ngrok http 5001
 
